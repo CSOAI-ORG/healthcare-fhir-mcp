@@ -15,7 +15,7 @@ Run:     FHIR_SERVER_URL=https://hapi.fhir.org/baseR4 python server.py
 import json
 import os
 import re
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional, Any
 from collections import defaultdict
 from mcp.server.fastmcp import FastMCP
@@ -487,7 +487,7 @@ def create_observation(
         "subject": {
             "reference": f"Patient/{patient_id}",
         },
-        "effectiveDateTime": datetime.utcnow().isoformat() + "Z",
+        "effectiveDateTime": datetime.now(tz=timezone.utc).isoformat(),
         "valueQuantity": {
             "value": value,
             "unit": unit,
