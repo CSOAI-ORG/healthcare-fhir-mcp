@@ -1,0 +1,27 @@
+{
+  "name": "healthcare-fhir-mcp",
+  "description": "MEOK AI Labs \u2014 FHIR R4 (Fast Healthcare Interoperability Resources) MCP server for healthcare AI.",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/healthcare-fhir-mcp",
+  "runtime": "python",
+  "entrypoint": "server.py",
+  "tools": [
+    "search_patients",
+    "get_patient",
+    "search_conditions",
+    "search_medications",
+    "search_observations",
+    "create_observation",
+    "get_care_plan",
+    "validate_resource"
+  ],
+  "categories": [
+    "Healthcare",
+    "Medical"
+  ],
+  "pricing": {
+    "free": "50 calls/day",
+    "pro": "$9/mo"
+  }
+}
