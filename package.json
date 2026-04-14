@@ -1,7 +1,7 @@
 {
   "name": "healthcare-fhir-mcp",
   "version": "1.0.0",
-  "description": "MEOK AI Labs — healthcare fhir MCP Server",
+  "description": "MEOK AI Labs \u2014 healthcare fhir MCP Server",
   "main": "server.py",
   "mcp": {
     "name": "healthcare fhir",
@@ -9,10 +9,25 @@
     "homepage": "https://meok.ai",
     "repository": "https://github.com/CSOAI-ORG/healthcare-fhir-mcp",
     "runtime": "python",
-    "tags": ["mcp", "mcp-server", "meok-ai-labs", "ai-tools"]
+    "tags": [
+      "mcp",
+      "mcp-server",
+      "meok-ai-labs",
+      "ai-tools"
+    ]
   },
-  "keywords": ["mcp", "mcp-server", "meok-ai-labs"],
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "meok-ai-labs"
+  ],
   "author": "MEOK AI Labs <nicholas@meok.ai>",
   "license": "MIT",
-  "repository": {"type": "git", "url": "https://github.com/CSOAI-ORG/healthcare-fhir-mcp"}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSOAI-ORG/healthcare-fhir-mcp"
+  },
+  "dependencies": {
+    "requests": "^1.0.0"
+  }
 }

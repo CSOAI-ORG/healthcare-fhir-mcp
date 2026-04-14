@@ -1,10 +1,106 @@
 name: healthcare-fhir-mcp
-description: "MEOK AI Labs — FHIR R4 (Fast Healthcare Interoperability Resources) MCP server for healthcare AI."
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/healthcare-fhir-mcp
-license: MIT
-categories: [Healthcare, Medical]
-tags: [healthcare, fhir, hl7, medical-records, health-informatics, ehr]
-runtime: python
-entrypoint: server.py
+description: "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for\
+  \ everyone."
+version: 1.0.0
+tools:
+- name: search_patients
+  description: Search for patients on the FHIR server by name, date of birth, or identifier.
+  parameters:
+  - name: name
+    type: string
+    required: false
+  - name: birthdate
+    type: string
+    required: false
+  - name: identifier
+    type: string
+    required: false
+  - name: count
+    type: integer
+    required: false
+- name: get_patient
+  description: Get a full patient record by FHIR resource ID. Returns demographics,
+  parameters:
+  - name: patient_id
+    type: string
+    required: true
+- name: search_conditions
+  description: Find diagnoses and conditions for a patient. Clinical status can be
+  parameters:
+  - name: patient_id
+    type: string
+    required: true
+  - name: clinical_status
+    type: string
+    required: false
+  - name: count
+    type: integer
+    required: false
+- name: search_medications
+  description: Find medication requests (prescriptions) for a patient. Status can
+    be
+  parameters:
+  - name: patient_id
+    type: string
+    required: true
+  - name: status
+    type: string
+    required: false
+  - name: count
+    type: integer
+    required: false
+- name: search_observations
+  description: Find lab results, vital signs, and other observations for a patient.
+  parameters:
+  - name: patient_id
+    type: string
+    required: true
+  - name: category
+    type: string
+    required: false
+  - name: code
+    type: string
+    required: false
+  - name: count
+    type: integer
+    required: false
+- name: create_observation
+  description: Record a new observation (vital sign, lab result) for a patient.
+  parameters:
+  - name: patient_id
+    type: string
+    required: true
+  - name: loinc_code
+    type: string
+    required: true
+  - name: display_name
+    type: string
+    required: true
+  - name: value
+    type: number
+    required: true
+  - name: unit
+    type: string
+    required: true
+  - name: status
+    type: string
+    required: false
+- name: get_care_plan
+  description: Retrieve active care plans for a patient. Care plans describe the intended
+  parameters:
+  - name: patient_id
+    type: string
+    required: true
+  - name: status
+    type: string
+    required: false
+  - name: count
+    type: integer
+    required: false
+- name: validate_resource
+  description: Validate a FHIR resource against the R4 specification. Accepts a JSON
+    string
+  parameters:
+  - name: resource_json
+    type: string
+    required: true

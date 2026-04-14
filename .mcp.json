@@ -1,27 +1,180 @@
 {
   "name": "healthcare-fhir-mcp",
-  "description": "MEOK AI Labs \u2014 FHIR R4 (Fast Healthcare Interoperability Resources) MCP server for healthcare AI.",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/healthcare-fhir-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
+  "version": "1.0.0",
   "tools": [
-    "search_patients",
-    "get_patient",
-    "search_conditions",
-    "search_medications",
-    "search_observations",
-    "create_observation",
-    "get_care_plan",
-    "validate_resource"
-  ],
-  "categories": [
-    "Healthcare",
-    "Medical"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "search_patients",
+      "description": "Search for patients on the FHIR server by name, date of birth, or identifier.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "birthdate": {
+            "type": "string"
+          },
+          "identifier": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "get_patient",
+      "description": "Get a full patient record by FHIR resource ID. Returns demographics,",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "patient_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "patient_id"
+        ]
+      }
+    },
+    {
+      "name": "search_conditions",
+      "description": "Find diagnoses and conditions for a patient. Clinical status can be",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "patient_id": {
+            "type": "string"
+          },
+          "clinical_status": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "patient_id"
+        ]
+      }
+    },
+    {
+      "name": "search_medications",
+      "description": "Find medication requests (prescriptions) for a patient. Status can be",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "patient_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "patient_id"
+        ]
+      }
+    },
+    {
+      "name": "search_observations",
+      "description": "Find lab results, vital signs, and other observations for a patient.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "patient_id": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "patient_id"
+        ]
+      }
+    },
+    {
+      "name": "create_observation",
+      "description": "Record a new observation (vital sign, lab result) for a patient.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "patient_id": {
+            "type": "string"
+          },
+          "loinc_code": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "patient_id",
+          "loinc_code",
+          "display_name",
+          "value",
+          "unit"
+        ]
+      }
+    },
+    {
+      "name": "get_care_plan",
+      "description": "Retrieve active care plans for a patient. Care plans describe the intended",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "patient_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "patient_id"
+        ]
+      }
+    },
+    {
+      "name": "validate_resource",
+      "description": "Validate a FHIR resource against the R4 specification. Accepts a JSON string",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "resource_json": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_json"
+        ]
+      }
+    }
+  ]
 }

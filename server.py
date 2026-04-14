@@ -204,12 +204,12 @@ mcp = FastMCP(
 
 
 @mcp.tool()
-def search_patients(name: str = "", birthdate: str = "", identifier: str = "", count: int = 20) -> dict:
+def search_patients(name: str = "", birthdate: str = "", identifier: str = "", count: int = 20, api_key: str = "") -> dict:
     """Search for patients on the FHIR server by name, date of birth, or identifier.
     Date format: YYYY-MM-DD. Identifier format depends on the system (e.g., MRN, SSN)."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -253,12 +253,12 @@ def search_patients(name: str = "", birthdate: str = "", identifier: str = "", c
 
 
 @mcp.tool()
-def get_patient(patient_id: str) -> dict:
+def get_patient(patient_id: str, api_key: str = "") -> dict:
     """Get a full patient record by FHIR resource ID. Returns demographics,
     identifiers, contact info, and other patient details."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -311,12 +311,12 @@ def get_patient(patient_id: str) -> dict:
 
 
 @mcp.tool()
-def search_conditions(patient_id: str, clinical_status: str = "active", count: int = 50) -> dict:
+def search_conditions(patient_id: str, clinical_status: str = "active", count: int = 50, api_key: str = "") -> dict:
     """Find diagnoses and conditions for a patient. Clinical status can be
     'active', 'recurrence', 'relapse', 'inactive', 'remission', or 'resolved'."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -361,12 +361,12 @@ def search_conditions(patient_id: str, clinical_status: str = "active", count: i
 
 
 @mcp.tool()
-def search_medications(patient_id: str, status: str = "active", count: int = 50) -> dict:
+def search_medications(patient_id: str, status: str = "active", count: int = 50, api_key: str = "") -> dict:
     """Find medication requests (prescriptions) for a patient. Status can be
     'active', 'on-hold', 'cancelled', 'completed', 'stopped', 'draft'."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -413,13 +413,13 @@ def search_medications(patient_id: str, status: str = "active", count: int = 50)
 
 
 @mcp.tool()
-def search_observations(patient_id: str, category: str = "", code: str = "", count: int = 50) -> dict:
+def search_observations(patient_id: str, category: str = "", code: str = "", count: int = 50, api_key: str = "") -> dict:
     """Find lab results, vital signs, and other observations for a patient.
     Category can be 'vital-signs', 'laboratory', 'social-history', 'imaging'.
     Code is a LOINC code (e.g., '8867-4' for heart rate)."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -487,7 +487,7 @@ def create_observation(
     display_name: str,
     value: float,
     unit: str,
-    status: str = "preliminary") -> dict:
+    status: str = "preliminary", api_key: str = "") -> dict:
     """Record a new observation (vital sign, lab result) for a patient.
     Includes care-based safety validation -- AI-generated values are checked
     against physiological ranges before submission.
@@ -497,7 +497,7 @@ def create_observation(
     8480-6 (systolic BP), 2708-6 (SpO2), 29463-7 (weight)."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -557,12 +557,12 @@ def create_observation(
 
 
 @mcp.tool()
-def get_care_plan(patient_id: str, status: str = "active", count: int = 20) -> dict:
+def get_care_plan(patient_id: str, status: str = "active", count: int = 20, api_key: str = "") -> dict:
     """Retrieve active care plans for a patient. Care plans describe the intended
     care activities, goals, and team members involved in a patient's treatment."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -619,7 +619,7 @@ def get_care_plan(patient_id: str, status: str = "active", count: int = 20) -> d
 
 
 @mcp.tool()
-def validate_resource(resource_json: str) -> dict:
+def validate_resource(resource_json: str, api_key: str = "") -> dict:
     """Validate a FHIR resource against the R4 specification. Accepts a JSON string
     of the resource. Checks structure, required fields, and (for Observations)
     clinical safety ranges.
@@ -628,7 +628,7 @@ def validate_resource(resource_json: str) -> dict:
     care-based safety checks for AI-generated clinical data."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
