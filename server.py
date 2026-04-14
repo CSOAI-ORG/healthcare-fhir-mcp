@@ -185,8 +185,7 @@ mcp = FastMCP(
         "FHIR R4 healthcare data server with care-based safety validation. "
         "Connects to any FHIR R4-compliant server. Requires FHIR_SERVER_URL env var. "
         "AI-generated clinical data is validated against physiological safety ranges."
-    ),
-)
+    ))
 
 
 @mcp.tool()
@@ -458,8 +457,7 @@ def create_observation(
     display_name: str,
     value: float,
     unit: str,
-    status: str = "preliminary",
-) -> dict:
+    status: str = "preliminary") -> dict:
     """Record a new observation (vital sign, lab result) for a patient.
     Includes care-based safety validation -- AI-generated values are checked
     against physiological ranges before submission.
