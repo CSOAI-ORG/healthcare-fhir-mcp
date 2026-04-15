@@ -1,7 +1,7 @@
 {
   "name": "healthcare-fhir-mcp",
   "version": "1.0.0",
-  "description": "MEOK AI Labs \u2014 healthcare fhir MCP Server",
+  "description": "Healthcare Fhir tools for AI agents. Capabilities: search patients, get patient, search conditions. Built by MEOK AI Labs.",
   "main": "server.py",
   "mcp": {
     "name": "healthcare fhir",

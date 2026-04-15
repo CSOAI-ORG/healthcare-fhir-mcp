@@ -1,6 +1,6 @@
 {
   "name": "healthcare-fhir-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 \n        ",
+  "description": "Healthcare Fhir tools for AI agents. Capabilities: search patients, get patient, search conditions. Built by MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
