@@ -1,6 +1,5 @@
 name: healthcare-fhir-mcp
-description: "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for\
-  \ everyone."
+description: "\n        "
 version: 1.0.0
 tools:
 - name: search_patients
