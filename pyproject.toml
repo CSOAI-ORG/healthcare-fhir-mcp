@@ -22,3 +22,6 @@ Repository = "https://github.com/CSOAI-ORG/healthcare-fhir-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
 only-include = ["server.py"]
+
+[project.scripts]
+healthcare_fhir_mcp = "server:main"
