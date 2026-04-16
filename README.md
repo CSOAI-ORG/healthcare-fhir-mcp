@@ -59,4 +59,15 @@ python server.py
 This is one of 255+ MCP servers by MEOK AI Labs. Browse all at [meok.ai](https://meok.ai) or [GitHub](https://github.com/CSOAI-ORG).
 
 ---
-**MEOK AI Labs** | [meok.ai](https://meok.ai) | nicholas@meok.ai | United Kingdom
+
+## 🏢 Enterprise & Pro Licensing
+
+| Plan | Price | Link |
+|------|-------|------|
+| **Healthcare FHIR MCP** | £15/mo | [Subscribe](https://buy.stripe.com/4gM4gB2G05kmeQJ42k8k802) |
+| **Full Suite** (9 MCPs) | £999/mo | [Subscribe](https://buy.stripe.com/6oU14p0xS4giaAtbuM8k82q) |
+
+> Built by [MEOK AI Labs](https://meok.ai) — sovereign AI infrastructure.
+
+---
+**MEOK AI Labs** | [meok.ai](https://meok.ai) | [csoai.org](https://csoai.org) | nicholas@meok.ai
