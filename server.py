@@ -209,7 +209,7 @@ def search_patients(name: str = "", birthdate: str = "", identifier: str = "", c
     Date format: YYYY-MM-DD. Identifier format depends on the system (e.g., MRN, SSN)."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -258,7 +258,7 @@ def get_patient(patient_id: str, api_key: str = "") -> dict:
     identifiers, contact info, and other patient details."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -316,7 +316,7 @@ def search_conditions(patient_id: str, clinical_status: str = "active", count: i
     'active', 'recurrence', 'relapse', 'inactive', 'remission', or 'resolved'."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -366,7 +366,7 @@ def search_medications(patient_id: str, status: str = "active", count: int = 50,
     'active', 'on-hold', 'cancelled', 'completed', 'stopped', 'draft'."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -419,7 +419,7 @@ def search_observations(patient_id: str, category: str = "", code: str = "", cou
     Code is a LOINC code (e.g., '8867-4' for heart rate)."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -497,7 +497,7 @@ def create_observation(
     8480-6 (systolic BP), 2708-6 (SpO2), 29463-7 (weight)."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -562,7 +562,7 @@ def get_care_plan(patient_id: str, status: str = "active", count: int = 20, api_
     care activities, goals, and team members involved in a patient's treatment."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -628,7 +628,7 @@ def validate_resource(resource_json: str, api_key: str = "") -> dict:
     care-based safety checks for AI-generated clinical data."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
