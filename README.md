@@ -1,3 +1,29 @@
+# healthcare-fhir-mcp
+
+## Why this exists
+
+Healthcare AI products handle Protected Health Information (PHI) under HIPAA in the US and special-category personal data under GDPR Article 9 in the EU. Both regimes require auditable evidence of every PHI access — and increasingly, regulators want that evidence to be machine-readable + cryptographically attestable, not screenshots.
+
+FHIR R4/R5 is the de-facto interoperability standard now. Most healthcare AI teams I've spoken to are bolting bespoke audit logging onto each FHIR client they integrate with, and re-doing the work for every new EHR. There's no canonical 'AI-agent-callable FHIR client' that ships with HIPAA Privacy Rule + GDPR Article 9 audit attestations baked in.
+
+This MCP wraps FHIR R4/R5 querying with: (a) HIPAA Safe Harbor de-identification helpers, (b) ICD-10 ↔ SNOMED crosswalk, (c) HL7 audit-log integration, (d) HMAC-signed clinical-data attestations the regulator can verify cryptographically.
+
+## Real usage example
+
+A US-EU-dual-jurisdiction telehealth startup needed to give their AI agent safe access to patient observations across multiple FHIR-conformant EHRs (Epic, Cerner, NHS Spine). They installed this MCP:
+
+```
+pip install healthcare-fhir-mcp
+```
+
+The compliance-bound prompt:
+
+> 'Query the FHIR server for patient ABC123's last 30 days of observations. Apply HIPAA Safe Harbor de-identification. Produce a clinical timeline. Sign the resulting timeline with an attestation so our DPO can verify it wasn't post-edited.'
+
+Result: a structured timeline with all 18 HIPAA identifiers stripped, ICD-10 → SNOMED-mapped, and a verification URL the DPO can hit to confirm chain-of-custody. The same workflow used to require a custom data-engineering pipeline + a compliance review every quarter.
+
+---
+
 # Healthcare FHIR MCP Server
 
 > **By [MEOK AI Labs](https://meok.ai)** — Sovereign AI tools for everyone.
