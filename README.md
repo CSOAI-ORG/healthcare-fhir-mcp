@@ -25,6 +25,8 @@ Result: a structured timeline with all 18 HIPAA identifiers stripped, ICD-10 →
 ---
 
 # Healthcare FHIR MCP Server
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/healthcare-fhir-mcp)](https://github.com/CSOAI-ORG/healthcare-fhir-mcp/stargazers)
+
 
 > **By [MEOK AI Labs](https://meok.ai)** — Sovereign AI tools for everyone.
 
@@ -97,3 +99,14 @@ This is one of 255+ MCP servers by MEOK AI Labs. Browse all at [meok.ai](https:/
 
 ---
 **MEOK AI Labs** | [meok.ai](https://meok.ai) | [csoai.org](https://csoai.org) | nicholas@meok.ai
+
+
+---
+
+## ⭐ Support This Project
+
+If you find this MCP server useful, please star the repo and share it with your compliance team. Every star helps us reach more organisations that need affordable AI compliance tools.
+
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/healthcare-fhir-mcp)](https://github.com/CSOAI-ORG/healthcare-fhir-mcp)
+
+**Questions?** [Open an issue](https://github.com/CSOAI-ORG/healthcare-fhir-mcp/issues) or email nicholas@csoai.org
