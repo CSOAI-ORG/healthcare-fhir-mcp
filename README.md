@@ -1,3 +1,7 @@
+[![healthcare-fhir-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/healthcare-fhir-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/healthcare-fhir-mcp)
+[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
+[![PyPI](https://img.shields.io/pypi/v/healthcare-fhir-mcp)](https://pypi.org/project/healthcare-fhir-mcp/)
+
 [![healthcare-fhir-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/healthcare-fhir-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/healthcare-fhir-mcp)
 
 # healthcare-fhir-mcp
