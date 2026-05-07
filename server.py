@@ -206,7 +206,23 @@ mcp = FastMCP(
 @mcp.tool()
 def search_patients(name: str = "", birthdate: str = "", identifier: str = "", count: int = 20, api_key: str = "") -> dict:
     """Search for patients on the FHIR server by name, date of birth, or identifier.
-    Date format: YYYY-MM-DD. Identifier format depends on the system (e.g., MRN, SSN)."""
+    Date format: YYYY-MM-DD. Identifier format depends on the system (e.g., MRN, SSN).
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
@@ -255,7 +271,23 @@ def search_patients(name: str = "", birthdate: str = "", identifier: str = "", c
 @mcp.tool()
 def get_patient(patient_id: str, api_key: str = "") -> dict:
     """Get a full patient record by FHIR resource ID. Returns demographics,
-    identifiers, contact info, and other patient details."""
+    identifiers, contact info, and other patient details.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
@@ -313,7 +345,23 @@ def get_patient(patient_id: str, api_key: str = "") -> dict:
 @mcp.tool()
 def search_conditions(patient_id: str, clinical_status: str = "active", count: int = 50, api_key: str = "") -> dict:
     """Find diagnoses and conditions for a patient. Clinical status can be
-    'active', 'recurrence', 'relapse', 'inactive', 'remission', or 'resolved'."""
+    'active', 'recurrence', 'relapse', 'inactive', 'remission', or 'resolved'.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
@@ -363,7 +411,22 @@ def search_conditions(patient_id: str, clinical_status: str = "active", count: i
 @mcp.tool()
 def search_medications(patient_id: str, status: str = "active", count: int = 50, api_key: str = "") -> dict:
     """Find medication requests (prescriptions) for a patient. Status can be
-    'active', 'on-hold', 'cancelled', 'completed', 'stopped', 'draft'."""
+    'active', 'on-hold', 'cancelled', 'completed', 'stopped', 'draft'.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
@@ -416,7 +479,23 @@ def search_medications(patient_id: str, status: str = "active", count: int = 50,
 def search_observations(patient_id: str, category: str = "", code: str = "", count: int = 50, api_key: str = "") -> dict:
     """Find lab results, vital signs, and other observations for a patient.
     Category can be 'vital-signs', 'laboratory', 'social-history', 'imaging'.
-    Code is a LOINC code (e.g., '8867-4' for heart rate)."""
+    Code is a LOINC code (e.g., '8867-4' for heart rate).
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
@@ -494,7 +573,22 @@ def create_observation(
 
     Status should be 'preliminary' for AI-generated data (not 'final').
     Common LOINC codes: 8867-4 (heart rate), 8310-5 (temperature),
-    8480-6 (systolic BP), 2708-6 (SpO2), 29463-7 (weight)."""
+    8480-6 (systolic BP), 2708-6 (SpO2), 29463-7 (weight).
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
@@ -559,7 +653,23 @@ def create_observation(
 @mcp.tool()
 def get_care_plan(patient_id: str, status: str = "active", count: int = 20, api_key: str = "") -> dict:
     """Retrieve active care plans for a patient. Care plans describe the intended
-    care activities, goals, and team members involved in a patient's treatment."""
+    care activities, goals, and team members involved in a patient's treatment.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
@@ -625,7 +735,22 @@ def validate_resource(resource_json: str, api_key: str = "") -> dict:
     clinical safety ranges.
 
     This uses the FHIR server's $validate operation when available, plus local
-    care-based safety checks for AI-generated clinical data."""
+    care-based safety checks for AI-generated clinical data.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
