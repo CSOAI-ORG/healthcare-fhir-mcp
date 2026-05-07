@@ -222,6 +222,14 @@ def search_patients(name: str = "", birthdate: str = "", identifier: str = "", c
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        name (str): The name to analyze or process.
+        birthdate (str): The birthdate to analyze or process.
+        identifier (str): The identifier to analyze or process.
+        count (int): The count to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -301,6 +309,11 @@ def get_patient(patient_id: str, api_key: str = "") -> dict:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        patient_id (str): The patient id to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -389,6 +402,13 @@ def search_conditions(patient_id: str, clinical_status: str = "active", count: i
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        patient_id (str): The patient id to analyze or process.
+        clinical_status (str): The clinical status to analyze or process.
+        count (int): The count to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -468,6 +488,13 @@ def search_medications(patient_id: str, status: str = "active", count: int = 50,
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        patient_id (str): The patient id to analyze or process.
+        status (str): The status to analyze or process.
+        count (int): The count to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -551,6 +578,14 @@ def search_observations(patient_id: str, category: str = "", code: str = "", cou
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        patient_id (str): The patient id to analyze or process.
+        category (str): The category to analyze or process.
+        code (str): The code to analyze or process.
+        count (int): The count to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -658,6 +693,16 @@ def create_observation(
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        patient_id (str): The patient id to analyze or process.
+        loinc_code (str): The loinc code to analyze or process.
+        display_name (str): The display name to analyze or process.
+        value (float): The value to analyze or process.
+        unit (str): The unit to analyze or process.
+        status (str): The status to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -753,6 +798,13 @@ def get_care_plan(patient_id: str, status: str = "active", count: int = 20, api_
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        patient_id (str): The patient id to analyze or process.
+        status (str): The status to analyze or process.
+        count (int): The count to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -848,6 +900,11 @@ def validate_resource(resource_json: str, api_key: str = "") -> dict:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        resource_json (str): The resource json to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
