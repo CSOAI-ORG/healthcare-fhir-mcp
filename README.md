@@ -1,3 +1,5 @@
+[![healthcare-fhir-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/healthcare-fhir-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/healthcare-fhir-mcp)
+
 # healthcare-fhir-mcp
 
 ## Why this exists
