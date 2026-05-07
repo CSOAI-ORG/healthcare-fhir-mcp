@@ -112,3 +112,4 @@ If you find this MCP server useful, please star the repo and share it with your 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/healthcare-fhir-mcp)](https://github.com/CSOAI-ORG/healthcare-fhir-mcp)
 
 **Questions?** [Open an issue](https://github.com/CSOAI-ORG/healthcare-fhir-mcp/issues) or email nicholas@csoai.org
+<!-- mcp-name: io.github.CSOAI-ORG/healthcare-fhir-mcp -->
