@@ -1,5 +1,8 @@
 # healthcare-fhir-mcp
 
+[![PyPI](https://img.shields.io/pypi/v/healthcare-fhir-mcp)](https://pypi.org/project/healthcare-fhir-mcp/) [![Python](https://img.shields.io/pypi/pyversions/healthcare-fhir-mcp)](https://pypi.org/project/healthcare-fhir-mcp/)
+
+
 ## Why this exists
 
 Healthcare AI products handle Protected Health Information (PHI) under HIPAA in the US and special-category personal data under GDPR Article 9 in the EU. Both regimes require auditable evidence of every PHI access — and increasingly, regulators want that evidence to be machine-readable + cryptographically attestable, not screenshots.
@@ -109,4 +112,22 @@ If you find this MCP server useful, please star the repo and share it with your 
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/healthcare-fhir-mcp)](https://github.com/CSOAI-ORG/healthcare-fhir-mcp)
 
-**Questions?** [Open an issue](https://github.com/CSOAI-ORG/healthcare-fhir-mcp/issues) or email nicholas@csoai.org
+**Questions?** [Open an issue](https://github.com/CSOAI-ORG/healthcare-fhir-mcp/issues) or email nicholas@meok.ai
+
+<!-- meok-moat-footer-v1 -->
+---
+
+## Pairs with MEOK Governance Suite
+
+Build something that touches users? You need compliance. MEOK ships 38 governance MCPs that drop in alongside this tool — EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, FDA SaMD, MDR, Basel, MiFID II, MiCA, COPPA, and more.
+
+```bash
+# One-shot install of the governance pack
+npx meok-setup --pack governance
+```
+
+Free tier: 10 calls/day per MCP. Pro tier (£79/mo): unlimited + cryptographically signed compliance attestations your auditor verifies independently.
+
+→ Full catalogue: [councilof.ai/catalogue](https://councilof.ai/catalogue)
+→ MEOK AI Labs: [meok.ai](https://meok.ai)
+
