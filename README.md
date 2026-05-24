@@ -101,7 +101,7 @@ This is one of 255+ MCP servers by MEOK AI Labs. Browse all at [meok.ai](https:/
 > Built by [MEOK AI Labs](https://meok.ai) — sovereign AI infrastructure.
 
 ---
-**MEOK AI Labs** | [meok.ai](https://meok.ai) | [csoai.org](https://csoai.org) | nicholas@meok.ai
+**MEOK AI Labs** | [meok.ai](https://meok.ai) | nicholas@meok.ai
 
 
 ---
