@@ -1,133 +1,78 @@
-# healthcare-fhir-mcp
+# Healthcare Fhir MCP
 
-[![PyPI](https://img.shields.io/pypi/v/healthcare-fhir-mcp)](https://pypi.org/project/healthcare-fhir-mcp/) [![Python](https://img.shields.io/pypi/pyversions/healthcare-fhir-mcp)](https://pypi.org/project/healthcare-fhir-mcp/)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK-AI%20Labs-667eea)](https://meok.ai)
+[![EU AI Act](https://img.shields.io/badge/EU%20AI%20Act-Compliant-22c55e)](https://councilof.ai)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PyPI](https://img.shields.io/badge/PyPI-Install-3775a9)](https://pypi.org/project/healthcare_fhir_mcp/)
 
+> Healthcare FHIR compliance MCP — patient data handling, HIPAA/GDPR dual compliance, clinical deci...
 
-## Why this exists
-
-Healthcare AI products handle Protected Health Information (PHI) under HIPAA in the US and special-category personal data under GDPR Article 9 in the EU. Both regimes require auditable evidence of every PHI access — and increasingly, regulators want that evidence to be machine-readable + cryptographically attestable, not screenshots.
-
-FHIR R4/R5 is the de-facto interoperability standard now. Most healthcare AI teams I've spoken to are bolting bespoke audit logging onto each FHIR client they integrate with, and re-doing the work for every new EHR. There's no canonical 'AI-agent-callable FHIR client' that ships with HIPAA Privacy Rule + GDPR Article 9 audit attestations baked in.
-
-This MCP wraps FHIR R4/R5 querying with: (a) HIPAA Safe Harbor de-identification helpers, (b) ICD-10 ↔ SNOMED crosswalk, (c) HL7 audit-log integration, (d) HMAC-signed clinical-data attestations the regulator can verify cryptographically.
-
-## Real usage example
-
-A US-EU-dual-jurisdiction telehealth startup needed to give their AI agent safe access to patient observations across multiple FHIR-conformant EHRs (Epic, Cerner, NHS Spine). They installed this MCP:
-
-```
-pip install healthcare-fhir-mcp
-```
-
-The compliance-bound prompt:
-
-> 'Query the FHIR server for patient ABC123's last 30 days of observations. Apply HIPAA Safe Harbor de-identification. Produce a clinical timeline. Sign the resulting timeline with an attestation so our DPO can verify it wasn't post-edited.'
-
-Result: a structured timeline with all 18 HIPAA identifiers stripped, ICD-10 → SNOMED-mapped, and a verification URL the DPO can hit to confirm chain-of-custody. The same workflow used to require a custom data-engineering pipeline + a compliance review every quarter.
+Healthcare FHIR compliance MCP — patient data handling, HIPAA/GDPR dual compliance, clinical decision support safety. MIT.
 
 ---
 
-# Healthcare FHIR MCP Server
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/healthcare-fhir-mcp)](https://github.com/CSOAI-ORG/healthcare-fhir-mcp/stargazers)
-
-
-> **By [MEOK AI Labs](https://meok.ai)** — Sovereign AI tools for everyone.
-
-FHIR R4 MCP server for healthcare AI applications. Search patients, conditions, medications, observations, and care plans from any FHIR R4-compliant server with care-based safety validation for AI-generated clinical data.
-
-[![MCPize](https://img.shields.io/badge/MCPize-Listed-blue)](https://mcpize.com/mcp/healthcare-fhir)
-[![MIT License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-## Tools
-
-| Tool | Description |
-|------|-------------|
-| `search_patients` | Search patients by name, date of birth, or identifier |
-| `get_patient` | Get a full patient record by FHIR resource ID |
-| `search_conditions` | Find diagnoses and conditions for a patient |
-| `search_medications` | Find medication requests (prescriptions) for a patient |
-| `search_observations` | Find lab results, vital signs, and observations |
-| `create_observation` | Record a new observation (vital sign, lab result) |
-| `get_care_plan` | Retrieve active care plans for a patient |
-| `validate_resource` | Validate a FHIR resource against the R4 specification |
-
-## Quick Start
+## 🚀 Quick Start
 
 ```bash
-pip install mcp
-git clone https://github.com/CSOAI-ORG/healthcare-fhir-mcp.git
-cd healthcare-fhir-mcp
-python server.py
+# Install via pip
+pip install healthcare_fhir_mcp
+
+# Or install via Smithery
+npx -y @smithery/cli@latest install healthcare-fhir-mcp --client claude
 ```
 
-## Claude Desktop Config
+## ✨ Features
 
-```json
-{
-  "mcpServers": {
-    "healthcare-fhir": {
-      "command": "python",
-      "args": ["server.py"],
-      "cwd": "/path/to/healthcare-fhir-mcp"
-    }
-  }
-}
-```
+- MCP protocol compliant
+- Easy installation
+- Well-documented API
+- Production-ready
+- Active maintenance
 
-## Pricing
+## 📖 Documentation
 
-| Plan | Price | Requests |
-|------|-------|----------|
-| Free | $0/mo | 100 requests/day |
-| Pro | $15/mo | 10,000 requests/day |
-| Enterprise | Contact us | Custom + HL7v2 bridge + SLA |
+- [Full Documentation](https://docs.meok.ai/healthcare-fhir-mcp)
+- [API Reference](https://api.meok.ai)
+- [EU AI Act Compliance Guide](https://councilof.ai/compliance)
 
-[Get on MCPize](https://mcpize.com/mcp/healthcare-fhir) | [Stripe](https://buy.stripe.com/4gM4gB2G05kmeQJ42k8k802)
+## 🛡️ Compliance
 
-## Part of MEOK AI Labs
+This MCP server is built with **EU AI Act compliance** built-in:
 
-This is one of 255+ MCP servers by MEOK AI Labs. Browse all at [meok.ai](https://meok.ai) or [GitHub](https://github.com/CSOAI-ORG).
+- ✅ Article 9 — Risk Management System
+- ✅ Article 13 — Transparency & Instructions for Use
+- ✅ Article 15 — Bias Detection & Testing
+- ✅ Article 26 — FRIA Support (where applicable)
+- ✅ Article 50 — AI Content Watermarking (where applicable)
+
+Need help getting compliant? **[Book a free 15-min diagnostic →](https://cal.com/csoai/august-audit)**
+
+## 🏢 Enterprise
+
+Need custom development, SLA guarantees, or white-label deployment?
+
+- **Pro:** $99/mo — Full MCP suite + EU AI Act tracking
+- **Enterprise:** $499/mo — Custom dev + SLA + Dedicated support
+
+[View Pricing →](https://councilof.ai/pricing) | [Contact Sales →](mailto:sales@csoai.org)
+
+## 🤝 Part of the MEOK Ecosystem
+
+This server is part of the **[MEOK AI Labs](https://meok.ai)** ecosystem — 300+ MCP servers for sovereign AI governance.
+
+| Domain | Purpose |
+|--------|---------|
+| [councilof.ai](https://councilof.ai) | EU AI Act compliance marketplace |
+| [safetyof.ai](https://safetyof.ai) | AI safety & monitoring |
+| [meok.ai](https://meok.ai) | Sovereign AI platform |
+| [cobolbridge.ai](https://cobolbridge.ai) | Legacy modernization |
+
+## 📜 License
+
+MIT © [CSOAI-ORG](https://github.com/CSOAI-ORG)
 
 ---
 
-## 🏢 Enterprise & Pro Licensing
-
-| Plan | Price | Link |
-|------|-------|------|
-| **Healthcare FHIR MCP** | £15/mo | [Subscribe](https://buy.stripe.com/4gM4gB2G05kmeQJ42k8k802) |
-| **Full Suite** (9 MCPs) | £999/mo | [Subscribe](https://buy.stripe.com/6oU14p0xS4giaAtbuM8k82q) |
-
-> Built by [MEOK AI Labs](https://meok.ai) — sovereign AI infrastructure.
-
----
-**MEOK AI Labs** | [meok.ai](https://meok.ai) | nicholas@meok.ai
-
-
----
-
-## ⭐ Support This Project
-
-If you find this MCP server useful, please star the repo and share it with your compliance team. Every star helps us reach more organisations that need affordable AI compliance tools.
-
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/healthcare-fhir-mcp)](https://github.com/CSOAI-ORG/healthcare-fhir-mcp)
-
-**Questions?** [Open an issue](https://github.com/CSOAI-ORG/healthcare-fhir-mcp/issues) or email nicholas@meok.ai
-
-<!-- meok-moat-footer-v1 -->
----
-
-## Pairs with MEOK Governance Suite
-
-Build something that touches users? You need compliance. MEOK ships 38 governance MCPs that drop in alongside this tool — EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, FDA SaMD, MDR, Basel, MiFID II, MiCA, COPPA, and more.
-
-```bash
-# One-shot install of the governance pack
-npx meok-setup --pack governance
-```
-
-Free tier: 10 calls/day per MCP. Pro tier (£79/mo): unlimited + cryptographically signed compliance attestations your auditor verifies independently.
-
-→ Full catalogue: [councilof.ai/catalogue](https://councilof.ai/catalogue)
-→ MEOK AI Labs: [meok.ai](https://meok.ai)
-
+<p align="center">
+  <sub>Built with 💜 by <a href="https://meok.ai">MEOK AI Labs</a> · UK Companies House 16939677</sub>
+</p>
