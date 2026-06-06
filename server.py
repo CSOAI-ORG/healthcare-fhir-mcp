@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+Buy Pro: https://www.csoai.org/checkout
+
 Healthcare FHIR MCP Server
 ============================
 FHIR R4 (Fast Healthcare Interoperability Resources) MCP server for healthcare AI.
