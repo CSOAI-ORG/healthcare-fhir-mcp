@@ -1,0 +1,24 @@
+# healthcare-fhir-mcp
+
+> Healthcare Fhir tools for AI agents. Capabilities: search patients, get patient, search conditions. Built by MEOK AI Labs.
+
+MCP server by MEOK AI Labs. Framework: fastmcp. Transport: stdio.
+
+## Tools
+- search_patients
+- get_patient
+- search_conditions
+- search_medications
+- search_observations
+- create_observation
+- get_care_plan
+- validate_resource
+
+## Install
+```
+pip install healthcare-fhir-mcp
+```
+
+## Links
+- PyPI: https://pypi.org/project/healthcare-fhir-mcp/
+- Docs: https://meok.ai

@@ -1,0 +1,37 @@
+{
+  "name": "healthcare-fhir-mcp",
+  "title": "Healthcare Fhir Mcp",
+  "description": "Healthcare Fhir tools for AI agents. Capabilities: search patients, get patient, search conditions. Built by MEOK AI Labs.",
+  "version": "1.0.5",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "search_patients"
+    },
+    {
+      "name": "get_patient"
+    },
+    {
+      "name": "search_conditions"
+    },
+    {
+      "name": "search_medications"
+    },
+    {
+      "name": "search_observations"
+    },
+    {
+      "name": "create_observation"
+    },
+    {
+      "name": "get_care_plan"
+    },
+    {
+      "name": "validate_resource"
+    }
+  ]
+}
