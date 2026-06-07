@@ -1,0 +1,26 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "healthcare-fhir-mcp",
+    "description": "Healthcare Fhir MCP Server by MEOK AI Labs",
+    "version": "1.0.5",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "healthcare-fhir-mcp"
+      }
+    ],
+    "capabilities": [
+      "search_patients",
+      "get_patient",
+      "search_conditions",
+      "search_medications",
+      "search_observations",
+      "create_observation",
+      "get_care_plan",
+      "validate_resource"
+    ]
+  }
+}

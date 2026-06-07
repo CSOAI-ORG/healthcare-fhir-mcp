@@ -1,0 +1,95 @@
+{
+  "name": "healthcare-fhir-mcp",
+  "description": "Healthcare Fhir MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/healthcare-fhir-mcp.html",
+  "version": "1.0.5",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "search_patients",
+      "name": "Search Patients",
+      "description": "search_patients via healthcare-fhir-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_patient",
+      "name": "Get Patient",
+      "description": "get_patient via healthcare-fhir-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "search_conditions",
+      "name": "Search Conditions",
+      "description": "search_conditions via healthcare-fhir-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "search_medications",
+      "name": "Search Medications",
+      "description": "search_medications via healthcare-fhir-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "search_observations",
+      "name": "Search Observations",
+      "description": "search_observations via healthcare-fhir-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "create_observation",
+      "name": "Create Observation",
+      "description": "create_observation via healthcare-fhir-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_care_plan",
+      "name": "Get Care Plan",
+      "description": "get_care_plan via healthcare-fhir-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "validate_resource",
+      "name": "Validate Resource",
+      "description": "validate_resource via healthcare-fhir-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
