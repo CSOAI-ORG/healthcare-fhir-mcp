@@ -4,9 +4,8 @@
   "version": "1.0.7",
   "description": "Healthcare Fhir MCP Server by MEOK AI Labs",
   "repository": {
-    "type": "git",
     "url": "https://github.com/CSOAI-ORG/healthcare-fhir-mcp",
-    "source": "https://github.com/CSOAI-ORG/healthcare-fhir-mcp"
+    "source": "github"
   },
   "packages": [
     {
