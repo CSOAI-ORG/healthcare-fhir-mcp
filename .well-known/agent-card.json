@@ -1,0 +1,168 @@
+{
+  "name": "Healthcare Fhir Mcp",
+  "version": "1.0.5",
+  "url": "https://mcp.meok.ai/healthcare-fhir-mcp/a2a",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "protocolVersion": "0.3.0",
+  "description": "Healthcare Fhir tools for AI agents. Capabilities: search patients, get patient, search conditions. Built by MEOK AI Labs.",
+  "provider": {
+    "organization": "MEOK AI LABS",
+    "url": "https://meok.ai"
+  },
+  "defaultInputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "skills": [
+    {
+      "id": "search_patients",
+      "name": "Search Patients",
+      "description": "Search Patients — a tool of the healthcare-fhir-mcp MCP.",
+      "tags": [
+        "care",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "get_patient",
+      "name": "Get Patient",
+      "description": "Get Patient — a tool of the healthcare-fhir-mcp MCP.",
+      "tags": [
+        "care",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "search_conditions",
+      "name": "Search Conditions",
+      "description": "Search Conditions — a tool of the healthcare-fhir-mcp MCP.",
+      "tags": [
+        "care",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "search_medications",
+      "name": "Search Medications",
+      "description": "Search Medications — a tool of the healthcare-fhir-mcp MCP.",
+      "tags": [
+        "care",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "search_observations",
+      "name": "Search Observations",
+      "description": "Search Observations — a tool of the healthcare-fhir-mcp MCP.",
+      "tags": [
+        "care",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "create_observation",
+      "name": "Create Observation",
+      "description": "Create Observation — a tool of the healthcare-fhir-mcp MCP.",
+      "tags": [
+        "care",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "get_care_plan",
+      "name": "Get Care Plan",
+      "description": "Get Care Plan — a tool of the healthcare-fhir-mcp MCP.",
+      "tags": [
+        "care",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "validate_resource",
+      "name": "Validate Resource",
+      "description": "Validate Resource — a tool of the healthcare-fhir-mcp MCP.",
+      "tags": [
+        "care",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    }
+  ],
+  "documentationUrl": "https://meok.ai",
+  "x-meok": {
+    "mcp_name": "healthcare-fhir-mcp",
+    "verifier": "https://proofof.ai/verify",
+    "governed_by": "CSOAI 52-article charter"
+  }
+}
