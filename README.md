@@ -1,4 +1,4 @@
-<!-- mcp-name: CSOAI-ORG/healthcare-fhir-mcp -->
+<!-- mcp-name: io.github.CSOAI-ORG/healthcare-fhir-mcp -->
 [![MCP Scorecard: 74/100](https://img.shields.io/badge/proofof.ai-74%2F100-5b21b6)](https://proofof.ai/scorecard/healthcare-fhir-mcp.html)
 
 # Healthcare Fhir MCP
@@ -134,3 +134,28 @@ Free tier: 10 calls/day per MCP. Pro tier (£79/mo): unlimited + cryptographical
 
 <!-- BUY-LADDER:END -->
 
+
+
+## Configuration
+
+Add to your `claude_desktop_config.json` (Claude Desktop) or your MCP client config:
+
+```json
+{
+  "mcpServers": {
+    "healthcare-fhir-mcp": {
+      "command": "uvx",
+      "args": ["healthcare-fhir-mcp"]
+    }
+  }
+}
+```
+
+Or: `pip install healthcare-fhir-mcp` then run the `healthcare-fhir-mcp` command (stdio transport).
+
+## Examples
+
+Once configured, ask your assistant, for example:
+- "Use `search_patients` to …"
+- "Use `get_patient` to …"
+- "Use `search_conditions` to …"
