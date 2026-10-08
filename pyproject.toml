@@ -9,7 +9,7 @@ description = "Healthcare Fhir tools for AI agents. Capabilities: search patient
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
 authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]
-dependencies = ["mcp>=1.0.0", "requests>=2.28.0", ]
+dependencies = ["mcp>=2.0.0", "requests>=2.28.0", ]
 keywords = ["mcp", "ai", "meok", "healthcare", "fhir", "mcp/"]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -22,7 +22,7 @@ Homepage = "https://meok.ai"
 Repository = "https://github.com/CSOAI-ORG/healthcare-fhir-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py", "auth_middleware.py"]
+only-include = ["server.py", "auth_middleware.py", "mcp2026_shim.py"]
 
 [project.scripts]
 healthcare_fhir_mcp = "server:main"
