@@ -268,7 +268,7 @@ def search_patients(name: str = "", birthdate: str = "", identifier: str = "", c
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -352,7 +352,7 @@ def get_patient(patient_id: str, api_key: str = "") -> dict:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -447,7 +447,7 @@ def search_conditions(patient_id: str, clinical_status: str = "active", count: i
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -533,7 +533,7 @@ def search_medications(patient_id: str, status: str = "active", count: int = 50,
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -624,7 +624,7 @@ def search_observations(patient_id: str, category: str = "", code: str = "", cou
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -741,7 +741,7 @@ def create_observation(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -843,7 +843,7 @@ def get_care_plan(patient_id: str, status: str = "active", count: int = 20, api_
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -943,7 +943,7 @@ def validate_resource(resource_json: str, api_key: str = "") -> dict:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -1017,10 +1017,10 @@ if __name__ == "__main__":
     main()
 
 
-# ── MEOK monetization layer (Stripe upgrade · PAYG · pricing) ──────────
-# Free tier is zero-config. Upgrade to Pro (unlimited) or pay-as-you-go per call.
+# ── MEOK pricing pointer (pay per delivered job; no subscriptions) ──────────
+# No tiers. Jobs are quoted individually at https://meok.ai/pricing.
 import os as _meok_os
-MEOK_STRIPE_UPGRADE = "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"  # Pro (unlimited)
+MEOK_STRIPE_UPGRADE = "https://meok.ai/pricing"  # Pro (unlimited)
 MEOK_PAYG_KEY = _meok_os.environ.get("MEOK_PAYG_KEY", "")  # set to enable PAYG (x402 / ~GBP0.05 per call)
 MEOK_PRICING = "https://meok.ai/pricing"
 
